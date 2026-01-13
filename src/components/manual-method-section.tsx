@@ -1,6 +1,7 @@
 
 import { Pencil, Heart, Star, Check } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
+import { getAssetUrl } from "@/src/config"
 
 export function ManualMethodSection() {
   const handleCTAClick = () => {
@@ -39,7 +40,7 @@ export function ManualMethodSection() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-white border-4 border-[#4FB7AD]/30 order-2 lg:order-1 shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
             <div className="absolute top-0 left-12 right-0 h-full border-l-2 border-red-200/50" />
             <img
-              src="/teacher-writing-detailed-notes-in-journal-notebook.jpg"
+              src={getAssetUrl('teacher-writing-detailed-notes-in-journal-notebook.jpg')}
               alt="Educadora documentando el día de tu hijo"
               className="object-cover w-full h-full"
             />

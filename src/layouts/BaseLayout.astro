@@ -1,5 +1,6 @@
 ---
 import '@/src/styles/globals.css';
+import { BASE_URL } from '@/src/config';
 
 interface Props {
   title?: string;
@@ -34,10 +35,10 @@ const {
     <meta name="theme-color" content="#4FB7AD" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icon-light-32x32.png" media="(prefers-color-scheme: light)" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icon-dark-32x32.png" media="(prefers-color-scheme: dark)" />
-    <link rel="apple-touch-icon" href="/apple-icon.png" />
+    <link rel="icon" type="image/svg+xml" href={`${BASE_URL}/icon.svg`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${BASE_URL}/icon-light-32x32.png`} media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${BASE_URL}/icon-dark-32x32.png`} media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href={`${BASE_URL}/apple-icon.png`} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

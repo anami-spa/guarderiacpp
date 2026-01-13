@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
+import { getAssetUrl } from "@/src/config"
 
 export function Footer() {
   return (
@@ -74,7 +75,7 @@ export function Footer() {
           <div className="lg:col-span-3">
             <div className="relative aspect-video overflow-hidden rounded-3xl bg-white border-4 border-white/30 shadow-2xl">
               <img
-                src="/google-maps-location-pin-concepcion-chile.jpg"
+                src={getAssetUrl('google-maps-location-pin-concepcion-chile.jpg')}
                 alt="Mapa de ubicación AGUU en Concepción"
                 className="object-cover w-full h-full"
               />

@@ -1,6 +1,7 @@
 
 import { Heart, Clock, BookOpen, Users, Sparkles } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
+import { getAssetUrl } from "@/src/config"
 
 export function BenefitsSection() {
   const benefits = [
@@ -62,7 +63,7 @@ export function BenefitsSection() {
           <div className="order-first md:order-last">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 shadow-lg">
               <img
-                src="/happy-children-playing-in-modern-daycare-center.jpg"
+                src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
                 alt="Educadora de AGUU interactuando con niños en actividad de cuidado personalizado"
                 className="w-full h-full object-cover"
               />

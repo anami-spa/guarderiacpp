@@ -7,6 +7,7 @@ import { Input } from "@/src/components/ui/input"
 import { Label } from "@/src/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select"
 import { Sparkles, Moon, Star } from "lucide-react"
+import { getAssetUrl } from "@/src/config"
 
 export function HeroSection() {
   const [formData, setFormData] = useState({
@@ -150,7 +151,7 @@ export function HeroSection() {
         {/* Image */}
         <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#4FB7AD]/10 to-[#F18868]/10 shadow-2xl border-4 border-white">
           <img
-            src="/happy-children-playing-in-modern-daycare-center.jpg"
+            src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
             alt="Niños felices jugando en guardería AGUU Concepción"
             className="object-cover w-full h-full"
           />
