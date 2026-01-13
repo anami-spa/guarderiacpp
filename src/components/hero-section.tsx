@@ -153,6 +153,8 @@ export function HeroSection() {
           <img
             src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
             alt="Niños felices jugando en guardería AGUU Concepción"
+            width="1200"
+            height="900"
             className="object-cover w-full h-full"
           />
         </div>

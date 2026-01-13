@@ -42,6 +42,9 @@ export function ManualMethodSection() {
             <img
               src={getAssetUrl('teacher-writing-detailed-notes-in-journal-notebook.jpg')}
               alt="Educadora documentando el día de tu hijo"
+              width="1200"
+              height="900"
+              loading="lazy"
               className="object-cover w-full h-full"
             />
           </div>

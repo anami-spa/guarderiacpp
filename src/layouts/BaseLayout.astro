@@ -26,13 +26,68 @@ const {
     <meta name="keywords" content="guardería Concepción, after school Concepción, cuidado infantil, jardín infantil, guardería centro Concepción" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="business.business" />
+    <meta property="og:site_name" content="Aguu Guardería y After School" />
     <meta property="og:title" content="Aguu Guardería y After School | Concepción" />
     <meta property="og:description" content="Cuidado seguro y atención personalizada para tu hijo en el centro de Concepción. Horario flexible de 8:00 a 19:00 hrs." />
+    <meta property="og:url" content="https://anami-spa.github.io/guarderiacpp/" />
     <meta property="og:locale" content="es_CL" />
+    <meta property="og:image" content="https://anami-spa.github.io/guarderiacpp/happy-children-playing-in-modern-daycare-center.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Niños felices en Aguu Guardería Concepción" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aguu Guardería y After School | Concepción" />
+    <meta name="twitter:description" content="Cuidado seguro y atención personalizada para tu hijo en el centro de Concepción. Horario flexible de 8:00 a 19:00 hrs." />
+    <meta name="twitter:image" content="https://anami-spa.github.io/guarderiacpp/happy-children-playing-in-modern-daycare-center.jpg" />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#4FB7AD" />
+
+    <!-- Structured Data (JSON-LD) - Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ChildCare",
+        "name": "Aguu Guardería y After School",
+        "description": "Guardería y After School en el centro de Concepción. Cuidado seguro, atención personalizada y registro diario completo para familias que trabajan.",
+        "url": "https://anami-spa.github.io/guarderiacpp/",
+        "logo": "https://anami-spa.github.io/guarderiacpp/icon.svg",
+        "image": "https://anami-spa.github.io/guarderiacpp/happy-children-playing-in-modern-daycare-center.jpg",
+        "telephone": "+56412345678",
+        "email": "contacto@aguu.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Lautaro 431",
+          "addressLocality": "Concepción",
+          "addressRegion": "Biobío",
+          "postalCode": "4030000",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-36.827",
+          "longitude": "-73.050"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "19:00"
+          }
+        ],
+        "priceRange": "$$",
+        "areaServed": {
+          "@type": "City",
+          "name": "Concepción",
+          "@id": "https://www.wikidata.org/wiki/Q2256"
+        },
+        "sameAs": []
+      }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href={`${BASE_URL}/icon.svg`} />
@@ -46,6 +101,13 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body class="font-sans antialiased">
+    <!-- Skip to main content link for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg"
+    >
+      Saltar al contenido principal
+    </a>
     <slot />
   </body>
 </html>

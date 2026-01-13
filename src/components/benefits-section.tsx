@@ -65,6 +65,9 @@ export function BenefitsSection() {
               <img
                 src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
                 alt="Educadora de AGUU interactuando con niños en actividad de cuidado personalizado"
+                width="1200"
+                height="900"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>

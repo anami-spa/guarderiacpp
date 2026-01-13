@@ -1,0 +1,6 @@
+# robots.txt for Aguu Guardería y After School
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://anami-spa.github.io/guarderiacpp/sitemap-index.xml

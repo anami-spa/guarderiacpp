@@ -77,6 +77,9 @@ export function Footer() {
               <img
                 src={getAssetUrl('google-maps-location-pin-concepcion-chile.jpg')}
                 alt="Mapa de ubicación AGUU en Concepción"
+                width="1200"
+                height="675"
+                loading="lazy"
                 className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
