@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+import { Header } from '@/src/components/header';
+import { HeroSection } from '@/src/components/hero-section';
+import { WhatIsAguuSection } from '@/src/components/what-is-aguu-section';
+import { ValueProposition } from '@/src/components/value-proposition';
+import { ServicesSection } from '@/src/components/services-section';
+import { BenefitsSection } from '@/src/components/benefits-section';
+import { ManualMethodSection } from '@/src/components/manual-method-section';
+import { FounderStorySection } from '@/src/components/founder-story-section';
+import { TestimonialsSection } from '@/src/components/testimonials-section';
+import { FinalCTASection } from '@/src/components/final-cta-section';
+import { Footer } from '@/src/components/footer';
+import { WhatsAppFloat } from '@/src/components/whatsapp-float';
+---
+
+<BaseLayout>
+  <main class="min-h-screen">
+    <Header client:load />
+    <HeroSection client:load />
+    <WhatIsAguuSection client:load />
+    <ValueProposition client:load />
+    <ServicesSection client:load />
+    <BenefitsSection client:load />
+    <ManualMethodSection client:load />
+    <FounderStorySection client:load />
+    <TestimonialsSection client:load />
+    <FinalCTASection client:load />
+    <Footer client:load />
+    <WhatsAppFloat client:only="react" />
+  </main>
+</BaseLayout>
