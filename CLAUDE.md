@@ -4,63 +4,89 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Landing page para Aguu Guardería y After School, ubicada en Concepción, Chile. Es una single-page application (SPA) construida con Next.js 16, React 19 y Tailwind CSS 4.
+Landing page para Aguu Guardería y After School, ubicada en Concepción, Chile. Es una aplicación estática construida con **Astro 5** + **React 18** + **Tailwind CSS 3**.
+
+### ¿Por qué Astro?
+
+Este proyecto usa Astro para obtener:
+- **SEO perfecto**: Pre-renderizado estático a HTML completo
+- **Rendimiento óptimo**: Mínimo JavaScript enviado al cliente
+- **Componentes React**: Donde se necesita interactividad
+- **Deploy simple**: Archivos estáticos que funcionan en cualquier hosting
 
 ## Commands
 
 ### Development
 ```bash
-pnpm dev          # Inicia el servidor de desarrollo en localhost:3000
-pnpm build        # Genera el build de producción
-pnpm start        # Inicia el servidor de producción
-pnpm lint         # Ejecuta ESLint
+npm run dev       # Inicia servidor de desarrollo en localhost:4321
+npm run build     # Genera build de producción (estático)
+npm run preview   # Preview del build de producción
+npm run astro     # CLI de Astro
 ```
 
-**Nota importante**: Este proyecto usa `pnpm` como gestor de paquetes.
+**Nota importante**: Este proyecto usa `npm` como gestor de paquetes.
 
 ## Architecture
 
 ### Stack Principal
-- **Framework**: Next.js 16 con App Router
-- **React**: v19.2.0 (React Server Components habilitado)
-- **Styling**: Tailwind CSS v4 con PostCSS
-- **UI Components**: shadcn/ui (configuración "new-york" style)
-- **Analytics**: Vercel Analytics integrado
+- **Framework**: Astro 5 (generador de sitios estáticos)
+- **React**: v18.3.1 (solo para componentes interactivos)
+- **Styling**: Tailwind CSS v3.4
+- **UI Components**: shadcn/ui (adaptados para Astro + React)
+- **Build**: Completamente estático (sin servidor)
 
 ### Estructura del Proyecto
 
 ```
-app/
-  ├── layout.tsx       # Root layout con fuentes (Geist, Nunito) y metadata SEO
-  ├── page.tsx         # Página principal que orquesta todas las secciones
-  └── globals.css      # Variables CSS personalizadas y tema de colores
+src/
+  ├── layouts/
+  │   └── BaseLayout.astro    # Layout base con SEO y meta tags
+  ├── pages/
+  │   └── index.astro         # Página principal (usa componentes React)
+  ├── components/
+  │   ├── ui/                 # Componentes shadcn/ui (React)
+  │   ├── header.tsx          # Navegación (React)
+  │   ├── hero-section.tsx
+  │   ├── what-is-aguu-section.tsx
+  │   ├── value-proposition.tsx
+  │   ├── services-section.tsx
+  │   ├── benefits-section.tsx
+  │   ├── manual-method-section.tsx
+  │   ├── founder-story-section.tsx
+  │   ├── testimonials-section.tsx
+  │   ├── final-cta-section.tsx
+  │   ├── footer.tsx
+  │   └── whatsapp-float.tsx
+  ├── lib/
+  │   └── utils.ts            # Utility functions (cn, clsx + tailwind-merge)
+  ├── hooks/                  # Custom React hooks
+  └── styles/
+      └── globals.css         # Variables CSS y estilos personalizados
 
-components/
-  ├── ui/              # Componentes shadcn/ui (Button, Card, Dialog, etc.)
-  ├── header.tsx       # Navegación principal
-  ├── hero-section.tsx
-  ├── what-is-aguu-section.tsx
-  ├── value-proposition.tsx
-  ├── services-section.tsx
-  ├── benefits-section.tsx
-  ├── manual-method-section.tsx
-  ├── founder-story-section.tsx
-  ├── testimonials-section.tsx
-  ├── final-cta-section.tsx
-  ├── footer.tsx
-  └── whatsapp-float.tsx  # Botón flotante de WhatsApp
-
-lib/
-  └── utils.ts         # Utility functions (cn, clsx + tailwind-merge)
-
-hooks/                 # Custom React hooks
+public/                       # Assets estáticos (íconos, imágenes)
 ```
 
-### Arquitectura de la Landing Page
+### Arquitectura de Astro + React
 
-La página principal (`app/page.tsx`) es un componente simple que importa y renderiza secciones en orden secuencial. Cada sección es un componente autocontenido en `/components/`.
+**Archivos `.astro`**:
+- `BaseLayout.astro`: Layout con HTML, head, SEO
+- `index.astro`: Página principal que importa componentes React
 
-**Orden de las secciones**:
+**Componentes React (`.tsx`)**:
+- Todos los componentes de secciones están en React
+- Se hidratan en el cliente con directivas `client:*`
+- NO usan `"use client"` (eso es de Next.js)
+
+**Directivas de Cliente en Astro**:
+```astro
+<Header client:load />          # Carga e hidrata inmediatamente
+<WhatsAppFloat client:only="react" />  # Solo se renderiza en cliente
+<Component client:visible />    # Carga cuando es visible (lazy)
+<Component client:idle />       # Carga cuando el navegador está idle
+```
+
+### Orden de las Secciones
+
 1. Header (navegación)
 2. Hero
 3. What is Aguu
@@ -76,7 +102,7 @@ La página principal (`app/page.tsx`) es un componente simple que importa y rend
 
 ### Sistema de Diseño
 
-**Paleta de colores personalizada** (definida en `app/globals.css`):
+**Paleta de colores personalizada** (definida en `src/styles/globals.css`):
 - Primary (Teal): `#4FB7AD`
 - Secondary (Coral): `#F18868`
 - Accent (Yellow): `#F4D862`
@@ -85,41 +111,40 @@ La página principal (`app/page.tsx`) es un componente simple que importa y rend
 - Background (Peach): `#FDE2CC`
 
 **Fuentes**:
-- Sans: Geist (variable `--font-sans`)
-- Mono: Geist Mono (variable `--font-mono`)
-- Heading: Nunito (variable `--font-heading`, pesos: 400, 600, 700, 800)
+- Sans: Geist (de Google Fonts)
+- Mono: Geist Mono
+- Heading: Nunito (pesos: 400, 600, 700, 800)
 
-**Tema**: Soporta light/dark mode mediante CSS variables y la clase `.dark`.
+**Tema**: Variables CSS configuradas en `:root` y `.dark`
 
 ### Configuración Importante
 
 **Path aliases** (`tsconfig.json`):
 - `@/*` → apunta a la raíz del proyecto
-- Ejemplos: `@/components/ui/button`, `@/lib/utils`
+- Ejemplos: `@/src/components/ui/button`, `@/src/lib/utils`
 
-**shadcn/ui config** (`components.json`):
-- Style: "new-york"
-- RSC: true (React Server Components)
-- Base color: neutral
-- CSS variables: true
-- Icon library: lucide-react
+**Astro config** (`astro.config.mjs`):
+```js
+integrations: [
+  react(),              // Habilita componentes React
+  tailwind({
+    applyBaseStyles: false  // Usamos nuestro globals.css
+  })
+]
+output: 'static'        // Generación estática
+```
 
-**Next.js config** (`next.config.mjs`):
-- TypeScript build errors ignorados (`ignoreBuildErrors: true`)
-- Imágenes sin optimizar (`unoptimized: true`)
-
-### Tailwind CSS 4
-
-Este proyecto usa **Tailwind CSS v4** (nueva versión mayor) con el nuevo plugin de PostCSS (`@tailwindcss/postcss`).
-
-**Diferencias clave**:
-- No existe `tailwind.config.ts/js` tradicional
-- La configuración está embebida en `@theme inline` dentro de `globals.css`
-- Usa `@import "tailwindcss"` en lugar de directivas `@tailwind`
+**Tailwind config** (`tailwind.config.mjs`):
+- Usa Tailwind CSS v3 (no v4)
+- Content: `src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}`
+- Plugin: `tailwindcss-animate`
 
 ### Componentes UI
 
-Todos los componentes UI son de shadcn/ui y están en `/components/ui/`. Incluye componentes como:
+Todos los componentes UI son de shadcn/ui adaptados para React en Astro.
+Ubicación: `src/components/ui/`
+
+Incluye:
 - Accordion, Alert Dialog, Avatar
 - Button, Card, Calendar
 - Carousel, Chart, Command
@@ -128,14 +153,42 @@ Todos los componentes UI son de shadcn/ui y están en `/components/ui/`. Incluye
 - Tabs, Toast, Tooltip
 - Y muchos más...
 
-Para agregar nuevos componentes shadcn/ui, usa el CLI configurado con los aliases del proyecto.
+**Importante**:
+- NO uses `"use client"` (eso es de Next.js)
+- Los imports deben usar `@/src/components/...`
+
+### SEO
+
+El SEO está configurado en `src/layouts/BaseLayout.astro`:
+- Meta tags completos (title, description, keywords)
+- Open Graph / Facebook tags
+- Favicon adaptativo (light/dark mode)
+- Theme color: `#4FB7AD`
+- Idioma: `es` (español)
+- Locale: `es_CL` (Chile)
+
+Todo el HTML se pre-renderiza, por lo que los bots de búsqueda ven contenido completo.
 
 ### Idioma y Localización
 
-- **Idioma**: Español de Chile (`lang="es"`, `locale: "es_CL"`)
-- Todo el contenido debe estar en español chileno
+- **Idioma**: Español de Chile (`lang="es"`)
+- Todo el contenido está en español chileno
 - Los metadatos SEO están optimizados para búsquedas locales en Concepción
 
-### Analytics
+### Deploy
 
-Vercel Analytics está integrado en `app/layout.tsx` mediante el componente `<Analytics />`.
+Como este es un sitio completamente estático:
+- Se puede deployar en Vercel, Netlify, GitHub Pages, Cloudflare Pages
+- El build genera carpeta `dist/` con archivos estáticos
+- No requiere servidor Node.js en producción
+
+### Diferencias con Next.js
+
+Si vienes de Next.js:
+- ❌ NO hay `"use client"` directive
+- ❌ NO hay Server/Client Components
+- ❌ NO hay `next/image` (usa `<img>` normal)
+- ❌ NO hay `next-themes` (no se usa por ahora)
+- ✅ Archivos `.astro` para páginas y layouts
+- ✅ Componentes React con directivas `client:*`
+- ✅ Todo se pre-renderiza a HTML estático

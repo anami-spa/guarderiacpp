@@ -1,7 +1,6 @@
 
 import { Heart, Clock, BookOpen, Users, Sparkles } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import Image from "next/image"
 
 export function BenefitsSection() {
   const benefits = [
@@ -62,11 +61,10 @@ export function BenefitsSection() {
           {/* Image placeholder */}
           <div className="order-first md:order-last">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 shadow-lg">
-              <Image
+              <img
                 src="/happy-children-playing-in-modern-daycare-center.jpg"
                 alt="Educadora de AGUU interactuando con niños en actividad de cuidado personalizado"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
