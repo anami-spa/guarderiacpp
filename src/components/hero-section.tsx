@@ -127,7 +127,7 @@ export function HeroSection() {
           </div>
 
           <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-[#79BBAF]/30 shadow-xl">
-            <h3 className="text-xl md:text-2xl font-bold text-[#79BBAF] mb-6 text-center">Agenda tu visita gratuita</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-[#79BBAF] mb-6 text-center">Agenda tu visita gratuita 🌟</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="nombre" className="text-foreground font-semibold">
