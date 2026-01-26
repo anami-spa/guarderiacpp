@@ -19,16 +19,16 @@ export function Header() {
             Inicio
           </a>
           <a
-            href="#que-es-aguu"
-            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
-          >
-            ¿Qué es AGUU?
-          </a>
-          <a
             href="#servicios"
             className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
             Servicios
+          </a>
+          <a
+            href="#que-es-aguu"
+            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
+          >
+            ¿Qué es AGUU?
           </a>
           <a
             href="#metodo-aguu"
@@ -80,18 +80,18 @@ export function Header() {
               Inicio
             </a>
             <a
-              href="#que-es-aguu"
-              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              ¿Qué es AGUU?
-            </a>
-            <a
               href="#servicios"
               className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Servicios
+            </a>
+            <a
+              href="#que-es-aguu"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ¿Qué es AGUU?
             </a>
             <a
               href="#metodo-aguu"
