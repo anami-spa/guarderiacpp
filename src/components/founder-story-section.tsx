@@ -1,10 +1,10 @@
 export function FounderStorySection() {
   return (
-    <section id="historia" className="py-16 md:py-24 bg-gradient-to-br from-[#CB90BF]/10 to-[#F4D862]/10">
+    <section id="historia" className="py-16 md:py-24 bg-gradient-to-br from-[#C18FC0]/10 to-[#ECD961]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-4">
-            <div className="inline-block bg-[#4FB7AD] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-[#79BBAF] text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
               Fundado por una mamá que también trabaja
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">AGUU nace desde...</h2>

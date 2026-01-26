@@ -15,8 +15,8 @@ export function ServicesSection() {
         "Bitácora diaria detallada de actividades",
         "Horario flexible de 8:00 a 19:00 hrs",
       ],
-      color: "#F4D862",
-      borderColor: "#F4D862",
+      color: "#ECD961",
+      borderColor: "#ECD961",
       link: "#servicio-guarderia",
     },
     {
@@ -29,8 +29,8 @@ export function ServicesSection() {
         "Merienda incluida y colación saludable",
         "Recogida desde el colegio (opcional)",
       ],
-      color: "#CB90BF",
-      borderColor: "#CB90BF",
+      color: "#C18FC0",
+      borderColor: "#C18FC0",
       link: "#servicio-after-school",
     },
     {
@@ -43,8 +43,8 @@ export function ServicesSection() {
         "Tarifas preferenciales para equipos",
         "Coordinación directa con RRHH",
       ],
-      color: "#C1CB33",
-      borderColor: "#C1CB33",
+      color: "#ECD961",
+      borderColor: "#ECD961",
       link: "#servicio-empresas",
     },
   ]
@@ -83,14 +83,14 @@ export function ServicesSection() {
                 >
                   <service.icon className="h-8 w-8" style={{ color: service.color }} />
                 </div>
-                <CardTitle className="text-2xl text-[#4FB7AD]">{service.title}</CardTitle>
+                <CardTitle className="text-2xl text-[#79BBAF]">{service.title}</CardTitle>
                 <CardDescription className="text-base text-foreground/80">{service.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col justify-between space-y-6">
                 <ul className="space-y-3">
                   {service.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="text-[#4FB7AD] mt-0.5 flex-shrink-0">✓</span>
+                      <span className="text-[#79BBAF] mt-0.5 flex-shrink-0">✓</span>
                       <span>{benefit}</span>
                     </li>
                   ))}

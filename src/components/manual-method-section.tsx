@@ -9,7 +9,7 @@ export function ManualMethodSection() {
   }
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#FDE2CC" }}>
+    <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#BFDFE3" }}>
       <div className="absolute top-0 left-0 right-0 h-16 bg-white">
         <svg
           className="absolute bottom-0 w-full h-16"
@@ -17,27 +17,27 @@ export function ManualMethodSection() {
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M0,50 C300,100 500,0 800,50 C1000,80 1100,30 1200,50 L1200,120 L0,120 Z" fill="#FDE2CC" />
+          <path d="M0,50 C300,100 500,0 800,50 C1000,80 1100,30 1200,50 L1200,120 L0,120 Z" fill="#BFDFE3" />
         </svg>
       </div>
 
-      <div className="absolute top-20 left-10 text-[#F18868] opacity-20 animate-float">
+      <div className="absolute top-20 left-10 text-[#DE886C] opacity-20 animate-float">
         <Pencil className="h-12 w-12" />
       </div>
-      <div className="absolute top-40 right-20 text-[#CB90BF] opacity-20 animate-float-slow">
+      <div className="absolute top-40 right-20 text-[#C18FC0] opacity-20 animate-float-slow">
         <Heart className="h-10 w-10" fill="currentColor" />
       </div>
-      <div className="absolute bottom-32 left-1/4 text-[#F4D862] opacity-20 animate-float-slower">
+      <div className="absolute bottom-32 left-1/4 text-[#ECD961] opacity-20 animate-float-slower">
         <Star className="h-8 w-8" fill="currentColor" />
       </div>
-      <div className="absolute bottom-20 right-1/3 text-[#4FB7AD] opacity-20 animate-float">
+      <div className="absolute bottom-20 right-1/3 text-[#79BBAF] opacity-20 animate-float">
         <Heart className="h-10 w-10" fill="currentColor" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Image - styled like a physical notebook with shadow and border */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-white border-4 border-[#4FB7AD]/30 order-2 lg:order-1 shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-white border-4 border-[#79BBAF]/30 order-2 lg:order-1 shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
             <div className="absolute top-0 left-12 right-0 h-full border-l-2 border-red-200/50" />
             <img
               src={getAssetUrl('teacher-writing-detailed-notes-in-journal-notebook.jpg')}
@@ -62,11 +62,11 @@ export function ManualMethodSection() {
 
             <div className="space-y-5">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#4FB7AD] flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#79BBAF] flex items-center justify-center">
                   <Check className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-[#4FB7AD] mb-1">Sabes cómo estuvo durante el día</h3>
+                  <h3 className="font-semibold text-lg text-[#79BBAF] mb-1">Sabes cómo estuvo durante el día</h3>
                   <p className="text-foreground/80">
                     Te contamos todo: si comió bien, cómo durmió la siesta, con qué jugó y cómo se sintió.
                   </p>
@@ -74,11 +74,11 @@ export function ManualMethodSection() {
               </div>
 
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#F18868] flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#DE886C] flex items-center justify-center">
                   <Check className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-[#F18868] mb-1">Te avisamos si notamos algo distinto</h3>
+                  <h3 className="font-semibold text-lg text-[#DE886C] mb-1">Te avisamos si notamos algo distinto</h3>
                   <p className="text-foreground/80">
                     Si vemos que no comió como siempre o que está más callado de lo normal, te lo decimos el mismo día.
                   </p>
@@ -86,11 +86,11 @@ export function ManualMethodSection() {
               </div>
 
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#CB90BF] flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#C18FC0] flex items-center justify-center">
                   <Check className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-[#CB90BF] mb-1">Tienes información para actuar</h3>
+                  <h3 className="font-semibold text-lg text-[#C18FC0] mb-1">Tienes información para actuar</h3>
                   <p className="text-foreground/80">
                     Con datos concretos puedes ajustar horarios en casa o ir al pediatra con información clara.
                   </p>
@@ -106,7 +106,7 @@ export function ManualMethodSection() {
               <Button
                 onClick={handleCTAClick}
                 size="lg"
-                className="bg-[#4FB7AD] hover:bg-[#4FB7AD]/90 text-white font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="bg-[#79BBAF] hover:bg-[#79BBAF]/90 text-white font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 Agenda tu visita gratuita
               </Button>
@@ -122,7 +122,7 @@ export function ManualMethodSection() {
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M0,50 C300,20 500,100 800,50 C1000,20 1100,80 1200,50 L1200,0 L0,0 Z" fill="#FDE2CC" />
+          <path d="M0,50 C300,20 500,100 800,50 C1000,20 1100,80 1200,50 L1200,0 L0,0 Z" fill="#BFDFE3" />
         </svg>
       </div>
     </section>

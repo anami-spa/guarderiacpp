@@ -4,12 +4,12 @@
 
 :root {
   /* Updated color palette to match playful daycare aesthetic */
-  --teal-primary: #4fb7ad;
-  --coral-secondary: #f18868;
-  --yellow-accent: #f4d862;
-  --purple-accent: #cb90bf;
-  --lime-accent: #c1cb33;
-  --peach-bg: #fde2cc;
+  --teal-primary: #79bbaf;
+  --coral-secondary: #de886c;
+  --yellow-accent: #ecd961;
+  --purple-accent: #c18fc0;
+  --lime-accent: #ecd961;
+  --peach-bg: #bfdfe3;
 
   --background: 0 0% 100%;
   --foreground: 0 0% 3.9%;
@@ -17,24 +17,24 @@
   --card-foreground: 0 0% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 3.9%;
-  --primary: 175 45% 51%;
+  --primary: 172 32% 60%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 16 86% 69%;
+  --secondary: 16 60% 63%;
   --secondary-foreground: 0 0% 100%;
-  --muted: 30 79% 91%;
+  --muted: 188 43% 81%;
   --muted-foreground: 0 0% 45%;
-  --accent: 48 89% 68%;
+  --accent: 49 78% 66%;
   --accent-foreground: 0 0% 9%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   --border: 0 0% 89.8%;
   --input: 0 0% 89.8%;
-  --ring: 175 45% 51%;
-  --chart-1: 175 45% 51%;
-  --chart-2: 16 86% 69%;
-  --chart-3: 48 89% 68%;
-  --chart-4: 307 35% 67%;
-  --chart-5: 65 58% 50%;
+  --ring: 172 32% 60%;
+  --chart-1: 172 32% 60%;
+  --chart-2: 16 60% 63%;
+  --chart-3: 49 78% 66%;
+  --chart-4: 295 32% 66%;
+  --chart-5: 49 78% 66%;
   --radius: 1rem;
 }
 
@@ -45,24 +45,24 @@
   --card-foreground: 0 0% 98%;
   --popover: 0 0% 3.9%;
   --popover-foreground: 0 0% 98%;
-  --primary: 175 45% 51%;
+  --primary: 172 32% 60%;
   --primary-foreground: 0 0% 9%;
-  --secondary: 16 86% 69%;
+  --secondary: 16 60% 63%;
   --secondary-foreground: 0 0% 98%;
   --muted: 0 0% 14.9%;
   --muted-foreground: 0 0% 63.9%;
-  --accent: 48 89% 68%;
+  --accent: 49 78% 66%;
   --accent-foreground: 0 0% 9%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   --border: 0 0% 14.9%;
   --input: 0 0% 14.9%;
-  --ring: 175 45% 51%;
-  --chart-1: 175 45% 51%;
-  --chart-2: 16 86% 69%;
-  --chart-3: 48 89% 68%;
-  --chart-4: 307 35% 67%;
-  --chart-5: 65 58% 50%;
+  --ring: 172 32% 60%;
+  --chart-1: 172 32% 60%;
+  --chart-2: 16 60% 63%;
+  --chart-3: 49 78% 66%;
+  --chart-4: 295 32% 66%;
+  --chart-5: 49 78% 66%;
 }
 
 @layer base {
@@ -74,7 +74,7 @@
     /* Subtle dot pattern for playful background */
     background-image: radial-gradient(
       circle,
-      rgba(79, 183, 173, 0.08) 1px,
+      rgba(121, 187, 175, 0.08) 1px,
       transparent 1px
     );
     background-size: 24px 24px;
@@ -87,7 +87,7 @@
   h5,
   h6 {
     font-family: 'Nunito', system-ui, sans-serif;
-    color: #4fb7ad;
+    color: #79bbaf;
   }
 }
 

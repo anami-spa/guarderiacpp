@@ -15,6 +15,9 @@ export default defineConfig({
     sitemap(),
   ],
   output: 'static',
+  devToolbar: {
+    enabled: false,
+  },
   build: {
     inlineStylesheets: 'auto',
   },

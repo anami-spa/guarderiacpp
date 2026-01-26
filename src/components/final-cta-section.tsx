@@ -7,7 +7,7 @@ export function FinalCTASection() {
   }
 
   return (
-    <section id="cta-final" className="py-16 md:py-24 bg-gradient-to-br from-[#4FB7AD]/10 to-[#F18868]/10">
+    <section id="cta-final" className="py-16 md:py-24 bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
@@ -23,7 +23,7 @@ export function FinalCTASection() {
             <Button
               onClick={handleCTAClick}
               size="lg"
-              className="rounded-full text-lg px-10 py-7 bg-[#F18868] hover:bg-[#F18868]/90 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+              className="rounded-full text-lg px-10 py-7 bg-[#DE886C] hover:bg-[#DE886C]/90 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
             >
               Agenda tu visita gratuita
             </Button>

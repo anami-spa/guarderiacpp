@@ -75,9 +75,9 @@ export function BenefitsSection() {
         </div>
 
         <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-gradient-to-br from-[#4FB7AD]/10 to-[#F18868]/10 p-8 md:p-10 rounded-3xl border-2 border-[#4FB7AD]/30 space-y-6">
+          <div className="bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 p-8 md:p-10 rounded-3xl border-2 border-[#79BBAF]/30 space-y-6">
             <div className="flex items-start gap-4">
-              <div className="rounded-full bg-[#4FB7AD] w-12 h-12 flex items-center justify-center flex-shrink-0">
+              <div className="rounded-full bg-[#79BBAF] w-12 h-12 flex items-center justify-center flex-shrink-0">
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
               <div className="space-y-4 flex-1">
@@ -91,7 +91,7 @@ export function BenefitsSection() {
                   onClick={handleCTAClick}
                   variant="default"
                   size="lg"
-                  className="rounded-full bg-[#F18868] hover:bg-[#F18868]/90"
+                  className="rounded-full bg-[#DE886C] hover:bg-[#DE886C]/90"
                 >
                   Agenda tu visita gratuita
                 </Button>

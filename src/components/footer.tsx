@@ -4,7 +4,7 @@ import { getAssetUrl } from "@/src/config"
 
 export function Footer() {
   return (
-    <footer id="contacto" className="border-t py-16 md:py-20" style={{ backgroundColor: "#4FB7AD" }}>
+    <footer id="contacto" className="border-t py-16 md:py-20" style={{ backgroundColor: "#79BBAF" }}>
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           {/* Contact Info */}
@@ -84,8 +84,8 @@ export function Footer() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                <div className="bg-white backdrop-blur-sm rounded-2xl px-6 py-3 border-2 border-[#4FB7AD] shadow-lg">
-                  <p className="font-semibold flex items-center gap-2 text-[#4FB7AD]">
+                <div className="bg-white backdrop-blur-sm rounded-2xl px-6 py-3 border-2 border-[#79BBAF] shadow-lg">
+                  <p className="font-semibold flex items-center gap-2 text-[#79BBAF]">
                     <MapPin className="h-5 w-5" />
                     Lautaro 431, Centro Concepción
                   </p>

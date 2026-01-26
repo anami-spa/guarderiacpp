@@ -6,19 +6,19 @@ export function ValueProposition() {
       icon: Shield,
       title: "Seguridad Monitoreada",
       description: "Cámaras de seguridad y protocolos activos para tu tranquilidad",
-      color: "#4FB7AD",
+      color: "#79BBAF",
     },
     {
       icon: Notebook,
       title: "Registro Diario Completo",
       description: "Sabrás exactamente cómo estuvo tu hijo: actividades, alimentación y emociones",
-      color: "#F18868",
+      color: "#DE886C",
     },
     {
       icon: MapPin,
       title: "Centro de Concepción",
       description: "Lautaro 431. Fácil acceso y cerca de tu trabajo",
-      color: "#CB90BF",
+      color: "#C18FC0",
     },
   ]
 

@@ -16,6 +16,8 @@ export function HeroSection() {
     edadNino: "",
     servicio: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -34,11 +36,53 @@ export function HeroSection() {
     return () => window.removeEventListener("hashchange", handleHashChange)
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const servicioText = formData.servicio ? `%0AServicio de interés: ${formData.servicio}` : ""
-    const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUU.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
-    window.open(`https://wa.me/56412345678?text=${whatsappMessage}`, "_blank")
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      // Crear FormData para enviar a Formspree
+      const form = new FormData()
+      form.append("nombre", formData.nombre)
+      form.append("telefono", formData.telefono)
+      form.append("edadNino", formData.edadNino)
+      form.append("servicio", formData.servicio || "No especificado")
+      form.append("_subject", "Nueva solicitud de visita - AGUU Guardería")
+
+      // Enviar a Formspree usando FormData
+      const response = await fetch("https://formspree.io/f/maqojvpw", {
+        method: "POST",
+        body: form,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+
+        // También abrir WhatsApp
+        const servicioText = formData.servicio ? `%0AServicio de interés: ${formData.servicio}` : ""
+        const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUU.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
+        window.open(`https://wa.me/56412345678?text=${whatsappMessage}`, "_blank")
+
+        // Limpiar formulario después de abrir WhatsApp
+        setFormData({
+          nombre: "",
+          telefono: "",
+          edadNino: "",
+          servicio: "",
+        })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      console.error("Error al enviar formulario:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -46,16 +90,16 @@ export function HeroSection() {
       id="contacto"
       className="container mx-auto px-4 py-16 md:py-24 lg:py-28 relative overflow-hidden"
       style={{
-        background: `linear-gradient(to bottom, white, #FDE2CC20)`,
+        background: `linear-gradient(to bottom, white, #BFDFE320)`,
       }}
     >
-      <div className="absolute top-10 left-5 md:left-10 text-[#F4D862] opacity-20 animate-float">
+      <div className="absolute top-10 left-5 md:left-10 text-[#ECD961] opacity-20 animate-float">
         <Star className="h-6 w-6 md:h-8 md:w-8" fill="currentColor" />
       </div>
-      <div className="absolute top-32 right-10 md:right-20 text-[#CB90BF] opacity-20 animate-float-slow">
+      <div className="absolute top-32 right-10 md:right-20 text-[#C18FC0] opacity-20 animate-float-slow">
         <Moon className="h-8 w-8 md:h-10 md:w-10" fill="currentColor" />
       </div>
-      <div className="absolute bottom-20 left-1/4 text-[#C1CB33] opacity-20 animate-float-slower">
+      <div className="absolute bottom-20 left-1/4 text-[#ECD961] opacity-20 animate-float-slower">
         <Sparkles className="h-5 w-5 md:h-6 md:w-6" fill="currentColor" />
       </div>
 
@@ -72,8 +116,8 @@ export function HeroSection() {
             </p>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-[#4FB7AD]/30 shadow-xl">
-            <h3 className="text-xl md:text-2xl font-bold text-[#4FB7AD] mb-6 text-center">Agenda tu visita gratuita</h3>
+          <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-[#79BBAF]/30 shadow-xl">
+            <h3 className="text-xl md:text-2xl font-bold text-[#79BBAF] mb-6 text-center">Agenda tu visita gratuita</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="nombre" className="text-foreground font-semibold">
@@ -85,7 +129,7 @@ export function HeroSection() {
                   value={formData.nombre}
                   onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
                   required
-                  className="rounded-2xl border-2 border-[#4FB7AD]/30 focus:border-[#4FB7AD] focus:ring-[#4FB7AD] h-12 text-base"
+                  className="rounded-2xl border-2 border-[#79BBAF]/30 focus:border-[#79BBAF] focus:ring-[#79BBAF] h-12 text-base"
                 />
               </div>
               <div className="space-y-2">
@@ -100,7 +144,7 @@ export function HeroSection() {
                   onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
                   required
                   inputMode="tel"
-                  className="rounded-2xl border-2 border-[#4FB7AD]/30 focus:border-[#4FB7AD] focus:ring-[#4FB7AD] h-12 text-base"
+                  className="rounded-2xl border-2 border-[#79BBAF]/30 focus:border-[#79BBAF] focus:ring-[#79BBAF] h-12 text-base"
                 />
               </div>
               <div className="space-y-2">
@@ -113,7 +157,7 @@ export function HeroSection() {
                   value={formData.edadNino}
                   onChange={(e) => setFormData({ ...formData, edadNino: e.target.value })}
                   required
-                  className="rounded-2xl border-2 border-[#4FB7AD]/30 focus:border-[#4FB7AD] focus:ring-[#4FB7AD] h-12 text-base"
+                  className="rounded-2xl border-2 border-[#79BBAF]/30 focus:border-[#79BBAF] focus:ring-[#79BBAF] h-12 text-base"
                 />
               </div>
               <div className="space-y-2">
@@ -124,7 +168,7 @@ export function HeroSection() {
                   value={formData.servicio}
                   onValueChange={(value) => setFormData({ ...formData, servicio: value })}
                 >
-                  <SelectTrigger className="rounded-2xl border-2 border-[#4FB7AD]/30 focus:border-[#4FB7AD] focus:ring-[#4FB7AD] h-12 text-base">
+                  <SelectTrigger className="rounded-2xl border-2 border-[#79BBAF]/30 focus:border-[#79BBAF] focus:ring-[#79BBAF] h-12 text-base">
                     <SelectValue placeholder="Selecciona un servicio" />
                   </SelectTrigger>
                   <SelectContent>
@@ -137,10 +181,24 @@ export function HeroSection() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full rounded-full bg-[#F18868] hover:bg-[#F18868]/90 text-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1 font-bold text-lg py-7 mt-2"
+                disabled={isSubmitting}
+                className="w-full rounded-full bg-[#DE886C] hover:bg-[#DE886C]/90 text-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1 font-bold text-lg py-7 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Agenda tu visita gratuita
+                {isSubmitting ? "Enviando..." : "Agenda tu visita gratuita"}
               </Button>
+
+              {submitStatus === "success" && (
+                <div className="text-sm text-center text-green-600 font-semibold pt-2 bg-green-50 rounded-lg py-3">
+                  ✓ ¡Mensaje enviado! Te contactaremos pronto.
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="text-sm text-center text-red-600 font-semibold pt-2 bg-red-50 rounded-lg py-3">
+                  ✗ Error al enviar. Intenta por WhatsApp o email directo.
+                </div>
+              )}
+
               <p className="text-sm text-center text-muted-foreground pt-2 leading-relaxed">
                 Te responderemos en menos de 2 horas · Visita sin compromiso
               </p>
@@ -149,7 +207,7 @@ export function HeroSection() {
         </div>
 
         {/* Image */}
-        <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#4FB7AD]/10 to-[#F18868]/10 shadow-2xl border-4 border-white">
+        <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 shadow-2xl border-4 border-white">
           <img
             src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
             alt="Niños felices jugando en guardería AGUU Concepción"

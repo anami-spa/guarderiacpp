@@ -11,40 +11,40 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-2xl font-bold tracking-tight text-[#4FB7AD]">Aguu</span>
+          <span className="text-2xl font-bold tracking-tight text-[#79BBAF]">Aguu</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#inicio" className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors">
+          <a href="#inicio" className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors">
             Inicio
           </a>
           <a
             href="#que-es-aguu"
-            className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
             ¿Qué es AGUU?
           </a>
           <a
             href="#servicios"
-            className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
             Servicios
           </a>
           <a
             href="#metodo-aguu"
-            className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
             Nuestro Método
           </a>
           <a
             href="#beneficios"
-            className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
             Beneficios
           </a>
           <a
             href="#testimonios"
-            className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+            className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
             Testimonios
           </a>
@@ -53,7 +53,7 @@ export function Header() {
         <div className="hidden md:block">
           <Button
             size="lg"
-            className="rounded-full bg-[#F18868] hover:bg-[#F18868]/90 text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold"
+            className="rounded-full bg-[#DE886C] hover:bg-[#DE886C]/90 text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold"
           >
             Agenda tu visita gratuita
           </Button>
@@ -61,7 +61,7 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#4FB7AD]"
+          className="md:hidden text-[#79BBAF]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -74,49 +74,49 @@ export function Header() {
           <nav className="container mx-auto flex flex-col gap-4 p-4">
             <a
               href="#inicio"
-              className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Inicio
             </a>
             <a
               href="#que-es-aguu"
-              className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               ¿Qué es AGUU?
             </a>
             <a
               href="#servicios"
-              className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Servicios
             </a>
             <a
               href="#metodo-aguu"
-              className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Nuestro Método
             </a>
             <a
               href="#beneficios"
-              className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Beneficios
             </a>
             <a
               href="#testimonios"
-              className="text-sm font-medium text-foreground/70 hover:text-[#4FB7AD] transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Testimonios
             </a>
             <Button
               size="lg"
-              className="w-full rounded-full bg-[#F18868] hover:bg-[#F18868]/90 text-white font-semibold"
+              className="w-full rounded-full bg-[#DE886C] hover:bg-[#DE886C]/90 text-white font-semibold"
             >
               Agenda tu visita gratuita
             </Button>
