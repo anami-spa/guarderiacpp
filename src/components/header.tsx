@@ -11,7 +11,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-2xl font-bold tracking-tight text-[#79BBAF]">Aguu</span>
+          <span className="text-2xl font-bold tracking-tight text-[#79BBAF]">Aguú</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -28,7 +28,7 @@ export function Header() {
             href="#que-es-aguu"
             className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
           >
-            ¿Qué es AGUU?
+            ¿Qué es AGUÚ?
           </a>
           <a
             href="#metodo-aguu"
@@ -91,7 +91,7 @@ export function Header() {
               className="text-sm font-medium text-foreground/70 hover:text-[#79BBAF] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              ¿Qué es AGUU?
+              ¿Qué es AGUÚ?
             </a>
             <a
               href="#metodo-aguu"

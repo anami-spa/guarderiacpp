@@ -6,7 +6,7 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "Desde que mi hijo está en AGUU puedo trabajar tranquila. El acompañamiento es cercano y se nota el cariño.",
+        "Desde que mi hijo está en AGUÚ puedo trabajar tranquila. El acompañamiento es cercano y se nota el cariño.",
       author: "María José",
       role: "Mamá de After School",
       childAge: "6 años",
@@ -19,7 +19,7 @@ export function TestimonialsSection() {
       childAge: "2 años",
     },
     {
-      quote: "La flexibilidad horaria fue clave para mí. AGUU entiende las necesidades de las familias que trabajamos.",
+      quote: "La flexibilidad horaria fue clave para mí. AGUÚ entiende las necesidades de las familias que trabajamos.",
       author: "Roberto",
       role: "Papá de Guardería",
       childAge: "3 años",
@@ -34,7 +34,7 @@ export function TestimonialsSection() {
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Lo que dicen las familias</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Experiencias reales de madres y padres que confían en AGUU
+            Experiencias reales de madres y padres que confían en AGUÚ
           </p>
         </div>
 

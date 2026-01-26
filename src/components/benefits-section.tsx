@@ -39,7 +39,7 @@ export function BenefitsSection() {
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Beneficios para tu familia</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Cómo AGUU mejora tu vida como madre o padre que trabaja
+            Cómo AGUÚ mejora tu vida como madre o padre que trabaja
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export function BenefitsSection() {
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 shadow-lg">
               <img
                 src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
-                alt="Educadora de AGUU interactuando con niños en actividad de cuidado personalizado"
+                alt="Educadora de AGUÚ interactuando con niños en actividad de cuidado personalizado"
                 width="1200"
                 height="900"
                 loading="lazy"

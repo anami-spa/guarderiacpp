@@ -10,7 +10,7 @@ export function Footer() {
           {/* Contact Info */}
           <div className="space-y-8 text-white lg:col-span-2">
             <div className="space-y-2">
-              <h3 className="text-3xl font-bold text-white">Aguu</h3>
+              <h3 className="text-3xl font-bold text-white">Aguú</h3>
               <p className="text-white/80 text-lg">Guardería y After School</p>
             </div>
 
@@ -22,10 +22,10 @@ export function Footer() {
                 <div>
                   <p className="font-semibold text-lg mb-1">Teléfono</p>
                   <a
-                    href="tel:+56412345678"
+                    href="tel:+56963736611"
                     className="text-white/90 hover:text-white transition-colors text-lg underline underline-offset-4"
                   >
-                    +56 41 234 5678
+                    +56 9 6373 6611
                   </a>
                 </div>
               </div>
@@ -37,10 +37,10 @@ export function Footer() {
                 <div>
                   <p className="font-semibold text-lg mb-1">Email</p>
                   <a
-                    href="mailto:contacto@aguu.cl"
+                    href="mailto:aguu.concepcion@gmail.com"
                     className="text-white/90 hover:text-white transition-colors text-lg underline underline-offset-4"
                   >
-                    contacto@aguu.cl
+                    aguu.concepcion@gmail.com
                   </a>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-white/30 text-center">
-          <p className="text-white/80">&copy; 2025 Aguu Guardería y After School. Todos los derechos reservados.</p>
+          <p className="text-white/80">&copy; 2025 Aguú Guardería y After School. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

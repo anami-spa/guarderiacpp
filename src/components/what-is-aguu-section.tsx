@@ -1,68 +1,80 @@
-import { Check, X } from "lucide-react"
+import { Heart, Users, Sparkles, Shield } from "lucide-react"
 
 export function WhatIsAguuSection() {
-  const weSomos = [
-    "Un lugar seguro de cuidado diario donde tu hijo está protegido, alimentado y acompañado mientras trabajas",
-    "Atención personalizada con grupos pequeños para que cada niño reciba el tiempo y cariño que necesita",
-    "Transparencia total con bitácora manual escrita a mano cada día sobre todo lo que hace tu hijo",
-    "Horario flexible de 8:00 a 19:00 hrs pensado para la realidad de familias que trabajan",
-    "Estimulación respetuosa integrada al juego sin presión académica, siguiendo el ritmo de cada niño",
-    "Ubicación céntrica en Concepción para que llegues rápido en caso de emergencia o imprevisto",
-  ]
-
-  const noSomos = [
-    "No somos un jardín infantil formal con curriculum educativo estructurado ni sala cuna institucional",
-    "No somos un centro de estimulación temprana enfocado en terapias, evaluaciones o planes de desarrollo específicos",
-    "No somos una guardería masiva donde tu hijo es uno más sin seguimiento individual",
-    "No hacemos promesas de desarrollo acelerado ni presionamos a los niños con objetivos académicos",
-  ]
-
   return (
     <section id="que-es-aguu" className="container mx-auto px-4 py-16 md:py-24">
       <div className="space-y-12">
         <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">¿Qué es AGUU?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">¿Qué es AGUÚ?</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Sabemos que elegir dónde dejar a tu hijo es una decisión difícil. Por eso queremos ser 100% claros sobre lo
-            que hacemos (y lo que no) en AGUU.
+            Sabemos que elegir dónde dejar a tu hijo es una decisión difícil. Por eso queremos ser 100% claros sobre
+            quiénes somos y cómo trabajamos.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-          {/* Somos */}
-          <div className="bg-emerald-50 dark:bg-emerald-950/20 p-8 rounded-3xl border-2 border-emerald-200 dark:border-emerald-800">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="rounded-full bg-emerald-500 p-2">
-                <Check className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-emerald-900 dark:text-emerald-100">Somos</h3>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 p-8 md:p-12 rounded-3xl border-2 border-[#79BBAF]/30 space-y-8">
+            {/* Mensaje principal */}
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#79BBAF] text-center">
+                Aquí tu hijo no es un número más
+              </h3>
+              <p className="text-lg text-foreground/80 text-center leading-relaxed">
+                Conocemos quién es, qué le gusta, qué le cuesta y cómo acompañarlo mejor cada día. Mantenemos una
+                comunicación constante contigo, porque creemos que el cuidado se construye en equipo.
+              </p>
             </div>
-            <ul className="space-y-4">
-              {weSomos.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-emerald-900 dark:text-emerald-100">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          {/* No Somos */}
-          <div className="bg-rose-50 dark:bg-rose-950/20 p-8 rounded-3xl border-2 border-rose-200 dark:border-rose-800">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="rounded-full bg-rose-500 p-2">
-                <X className="h-6 w-6 text-white" />
+            {/* Valores clave */}
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <div className="flex items-start gap-4 bg-white/50 p-6 rounded-2xl">
+                <div className="rounded-full bg-[#79BBAF] w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <Heart className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2 text-[#79BBAF]">Trato personalizado</h4>
+                  <p className="text-sm text-foreground/70">
+                    Conocemos a cada niño por su nombre, sus preferencias y su historia.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-rose-900 dark:text-rose-100">No somos</h3>
+
+              <div className="flex items-start gap-4 bg-white/50 p-6 rounded-2xl">
+                <div className="rounded-full bg-[#DE886C] w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2 text-[#DE886C]">Comunicación constante</h4>
+                  <p className="text-sm text-foreground/70">
+                    Trabajamos en equipo contigo para el bienestar de tu hijo.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 bg-white/50 p-6 rounded-2xl">
+                <div className="rounded-full bg-[#C18FC0] w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2 text-[#C18FC0]">Sin presiones académicas</h4>
+                  <p className="text-sm text-foreground/70">
+                    No trabajamos con presiones académicas ni promesas irreales.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 bg-white/50 p-6 rounded-2xl">
+                <div className="rounded-full bg-[#ECD961] w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2 text-[#ECD961]">Desarrollo sano y feliz</h4>
+                  <p className="text-sm text-foreground/70">
+                    Creemos en el juego, el vínculo, la rutina y el respeto como bases.
+                  </p>
+                </div>
+              </div>
             </div>
-            <ul className="space-y-4">
-              {noSomos.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <X className="h-5 w-5 text-rose-600 dark:text-rose-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-rose-900 dark:text-rose-100">{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ export function HeroSection() {
       form.append("telefono", formData.telefono)
       form.append("edadNino", formData.edadNino)
       form.append("servicio", formData.servicio || "No especificado")
-      form.append("_subject", "Nueva solicitud de visita - AGUU Guardería")
+      form.append("_subject", "Nueva solicitud de visita - AGUÚ Guardería")
 
       // Enviar a Formspree usando FormData
       const response = await fetch("https://formspree.io/f/maqojvpw", {
@@ -70,8 +70,8 @@ export function HeroSection() {
         setTimeout(() => {
           // También abrir WhatsApp
           const servicioText = formData.servicio ? `%0AServicio de interés: ${formData.servicio}` : ""
-          const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUU.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
-          window.open(`https://wa.me/56412345678?text=${whatsappMessage}`, "_blank")
+          const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUÚ.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
+          window.open(`https://wa.me/56963736611?text=${whatsappMessage}`, "_blank")
         }, 1500)
 
         // Limpiar formulario después de 2 segundos
@@ -121,7 +121,7 @@ export function HeroSection() {
               Trabaja tranquila: tu hijo está seguro, cuidado y feliz en pleno centro de Concepción
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-medium text-pretty leading-relaxed">
-              AGUU es la guardería que construimos para nuestros propios hijos: cuidado cercano, transparencia total y
+              AGUÚ es la guardería que construimos para nuestros propios hijos: cuidado cercano, transparencia total y
               horarios flexibles de 8:00 a 19:00 hrs en pleno centro de Concepción.
             </p>
           </div>
@@ -220,7 +220,7 @@ export function HeroSection() {
         <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 shadow-2xl border-4 border-white">
           <img
             src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
-            alt="Niños felices jugando en guardería AGUU Concepción"
+            alt="Niños felices jugando en guardería AGUÚ Concepción"
             width="1200"
             height="900"
             className="object-cover w-full h-full"

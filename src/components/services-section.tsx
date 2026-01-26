@@ -35,17 +35,17 @@ export function ServicesSection() {
     },
     {
       icon: Building2,
-      title: "Convenios Empresas",
-      description: "Soluciones flexibles para el bienestar de colaboradores",
+      title: "Convenios",
+      description: "Opciones especiales para grupos y organizaciones",
       benefits: [
-        "Beneficios corporativos personalizados",
-        "Eventos de cuidado infantil para empresas",
-        "Tarifas preferenciales para equipos",
-        "Coordinación directa con RRHH",
+        "Convenio para Tribus: emprendedoras/es e independientes",
+        "Convenio de Empresa: beneficios corporativos",
+        "Tarifas preferenciales grupales",
+        "Flexibilidad según tus necesidades",
       ],
       color: "#ECD961",
       borderColor: "#ECD961",
-      link: "#servicio-empresas",
+      link: "#servicio-convenios",
     },
   ]
 
