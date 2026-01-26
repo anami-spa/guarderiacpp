@@ -12,6 +12,7 @@ import { TestimonialsSection } from '@/src/components/testimonials-section';
 import { FinalCTASection } from '@/src/components/final-cta-section';
 import { Footer } from '@/src/components/footer';
 import { WhatsAppFloat } from '@/src/components/whatsapp-float';
+import { ScrollToTop } from '@/src/components/scroll-to-top';
 ---
 
 <BaseLayout>
@@ -28,5 +29,6 @@ import { WhatsAppFloat } from '@/src/components/whatsapp-float';
     <FinalCTASection client:visible />
     <Footer client:visible />
     <WhatsAppFloat client:only="react" />
+    <ScrollToTop client:only="react" />
   </main>
 </BaseLayout>
