@@ -59,23 +59,33 @@ export function HeroSection() {
         },
       })
 
+      const responseData = await response.json()
+      console.log("Formspree response:", response.status, responseData)
+
       if (response.ok) {
         setSubmitStatus("success")
+        console.log("✅ Email enviado correctamente a Formspree")
 
-        // También abrir WhatsApp
-        const servicioText = formData.servicio ? `%0AServicio de interés: ${formData.servicio}` : ""
-        const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUU.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
-        window.open(`https://wa.me/56412345678?text=${whatsappMessage}`, "_blank")
+        // Esperar 1.5 segundos para que el usuario vea el mensaje de éxito
+        setTimeout(() => {
+          // También abrir WhatsApp
+          const servicioText = formData.servicio ? `%0AServicio de interés: ${formData.servicio}` : ""
+          const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUU.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
+          window.open(`https://wa.me/56412345678?text=${whatsappMessage}`, "_blank")
+        }, 1500)
 
-        // Limpiar formulario después de abrir WhatsApp
-        setFormData({
-          nombre: "",
-          telefono: "",
-          edadNino: "",
-          servicio: "",
-        })
+        // Limpiar formulario después de 2 segundos
+        setTimeout(() => {
+          setFormData({
+            nombre: "",
+            telefono: "",
+            edadNino: "",
+            servicio: "",
+          })
+        }, 2000)
       } else {
         setSubmitStatus("error")
+        console.error("❌ Error de Formspree:", responseData)
       }
     } catch (error) {
       setSubmitStatus("error")
