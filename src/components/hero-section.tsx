@@ -66,15 +66,7 @@ export function HeroSection() {
         setSubmitStatus("success")
         console.log("✅ Email enviado correctamente a Formspree")
 
-        // Esperar 1.5 segundos para que el usuario vea el mensaje de éxito
-        setTimeout(() => {
-          // También abrir WhatsApp
-          const servicioText = formData.servicio ? `%0AServicio de interés: ${formData.servicio}` : ""
-          const whatsappMessage = `Hola! Quiero agendar una visita gratuita a AGUÚ.%0A%0ANombre: ${formData.nombre}%0ATeléfono: ${formData.telefono}%0AEdad del niño/a: ${formData.edadNino}${servicioText}`
-          window.open(`https://wa.me/56963736611?text=${whatsappMessage}`, "_blank")
-        }, 1500)
-
-        // Limpiar formulario después de 2 segundos
+        // Limpiar formulario después de 4 segundos para que el usuario vea el mensaje de éxito
         setTimeout(() => {
           setFormData({
             nombre: "",
@@ -82,7 +74,8 @@ export function HeroSection() {
             edadNino: "",
             servicio: "",
           })
-        }, 2000)
+          setSubmitStatus("idle")
+        }, 4000)
       } else {
         setSubmitStatus("error")
         console.error("❌ Error de Formspree:", responseData)

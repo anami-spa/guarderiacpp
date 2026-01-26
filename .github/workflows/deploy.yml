@@ -36,6 +36,11 @@ jobs:
       - name: Build with Astro
         run: npm run build
 
+      - name: Verify .nojekyll exists
+        run: |
+          ls -la dist/.nojekyll
+          echo "✅ .nojekyll file present in dist/"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
