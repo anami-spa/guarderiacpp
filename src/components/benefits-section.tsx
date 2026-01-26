@@ -81,7 +81,7 @@ export function BenefitsSection() {
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
               <div className="space-y-4 flex-1">
-                <h3 className="text-2xl md:text-3xl font-bold">Vas a saber cómo estuvo tu hijo</h3>
+                <h3 className="text-2xl md:text-3xl font-bold">Transparencia total en el cuidado</h3>
                 <p className="text-muted-foreground text-balance">
                   Cada día recibirás un registro completo de las actividades, alimentación, descansos y emociones de tu
                   hijo. Esta información está pensada para ti, para que siempre sepas cómo estuvo y puedas tomar

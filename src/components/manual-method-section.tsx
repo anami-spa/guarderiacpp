@@ -9,7 +9,7 @@ export function ManualMethodSection() {
   }
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#BFDFE3" }}>
+    <section id="metodo-aguu" className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#BFDFE3" }}>
       <div className="absolute top-0 left-0 right-0 h-16 bg-white">
         <svg
           className="absolute bottom-0 w-full h-16"
