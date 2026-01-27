@@ -5,8 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://anami-spa.github.io',
-  base: '/guarderiacpp',
+  site: 'https://aguu.cl',
+  base: '/',
   integrations: [
     react(),
     tailwind({
