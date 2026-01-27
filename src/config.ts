@@ -1,5 +1,5 @@
-// Base URL configuration for GitHub Pages deployment
-export const BASE_URL = '/guarderiacpp';
+// Base URL configuration for domain deployment
+export const BASE_URL = '';
 
 // Helper function to get asset URLs
 export function getAssetUrl(path: string): string {
