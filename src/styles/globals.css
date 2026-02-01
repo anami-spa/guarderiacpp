@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './hero-background.css';
+
 :root {
   /* Updated color palette to match playful daycare aesthetic */
   --teal-primary: #79bbaf;

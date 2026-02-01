@@ -101,8 +101,21 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-white/30 text-center">
-          <p className="text-white/80">&copy; 2025 Aguú Guardería y After School. Todos los derechos reservados.</p>
+        <div className="mt-16 pt-8 border-t border-white/30 text-center space-y-3">
+          <p className="text-white/80">
+            &copy; {new Date().getFullYear()} Aguú Guardería y After School. Todos los derechos reservados.
+          </p>
+          <p className="text-xs text-white/40">
+            Desarrollado por{" "}
+            <a
+              href="https://anami.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white/60 transition-colors underline-offset-2 hover:underline"
+            >
+              anami.cl
+            </a>
+          </p>
         </div>
       </div>
     </footer>

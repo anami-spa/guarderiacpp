@@ -1,13 +1,16 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/src/components/ui/button"
 import { Input } from "@/src/components/ui/input"
 import { Label } from "@/src/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select"
 import { Sparkles, Moon, Star } from "lucide-react"
 import { getAssetUrl } from "@/src/config"
+import { RucaPattern } from "@/src/components/ui/ruca-pattern"
+import gsap from "gsap"
+import "@/src/styles/hero-background.css"
 
 export function HeroSection() {
   const [formData, setFormData] = useState({
@@ -18,6 +21,17 @@ export function HeroSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const [confettiPositions, setConfettiPositions] = useState<Array<{ top: string; left: string }>>([])
+
+  // Generar posiciones de confeti solo en el cliente para evitar SSR mismatch
+  useEffect(() => {
+    const positions = [...Array(15)].map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }))
+    setConfettiPositions(positions)
+  }, [])
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -34,6 +48,43 @@ export function HeroSection() {
     handleHashChange()
     window.addEventListener("hashchange", handleHashChange)
     return () => window.removeEventListener("hashchange", handleHashChange)
+  }, [])
+
+  // Efecto GSAP para título - Palabras Saltarinas
+  useEffect(() => {
+    if (!titleRef.current) return
+
+    const words = titleRef.current.innerText.split(' ')
+    titleRef.current.innerHTML = words
+      .map((word, i) => `<span class="word inline-block" data-index="${i}">${word}</span>`)
+      .join(' ')
+
+    const wordElements = titleRef.current.querySelectorAll('.word')
+
+    // Colores corporativos para cada palabra
+    const colors = ['#79BBAF', '#DE886C', '#ECD961', '#C18FC0']
+
+    gsap.from(wordElements, {
+      opacity: 0,
+      y: 60,
+      scale: 0.3,
+      rotation: -15,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'back.out(2)',
+      delay: 0.2,
+      onComplete: () => {
+        // Aplicar colores alternados después de la animación
+        wordElements.forEach((word, i) => {
+          const colorIndex = i % colors.length
+          gsap.to(word, {
+            color: colors[colorIndex],
+            duration: 0.6,
+            delay: i * 0.05,
+          })
+        })
+      }
+    })
   }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -96,21 +147,59 @@ export function HeroSection() {
         background: `linear-gradient(to bottom, white, #BFDFE320)`,
       }}
     >
-      <div className="absolute top-10 left-5 md:left-10 text-[#ECD961] opacity-20 animate-float">
+      {/* CAPA 1: Patrón de Rucas (Identidad Corporativa) */}
+      <div className="absolute inset-0 opacity-100">
+        <RucaPattern />
+      </div>
+
+      {/* CAPA 2: Blobs Corporativos con Relieves */}
+      <div className="absolute inset-0">
+        <div className="blob-teal" />
+        <div className="blob-coral" />
+        <div className="blob-yellow" />
+        <div className="blob-purple" />
+      </div>
+
+      {/* CAPA 3: Confeti Corporativo */}
+      <div className="absolute inset-0 opacity-40">
+        {confettiPositions.map((position, i) => {
+          const colors = ['#79BBAF', '#DE886C', '#ECD961', '#C18FC0']
+          const color = colors[i % colors.length]
+          return (
+            <div
+              key={i}
+              className="confetti-dot"
+              style={{
+                background: color,
+                boxShadow: `inset 2px 2px 4px rgba(255, 255, 255, 0.6), 2px 2px 8px ${color}40`,
+                top: position.top,
+                left: position.left,
+                animationDelay: `${i * 0.5}s`,
+              }}
+            />
+          )
+        })}
+      </div>
+
+      {/* Elementos decorativos originales */}
+      <div className="absolute top-10 left-5 md:left-10 text-[#ECD961] opacity-20 animate-float z-10">
         <Star className="h-6 w-6 md:h-8 md:w-8" fill="currentColor" />
       </div>
-      <div className="absolute top-32 right-10 md:right-20 text-[#C18FC0] opacity-20 animate-float-slow">
+      <div className="absolute top-32 right-10 md:right-20 text-[#C18FC0] opacity-20 animate-float-slow z-10">
         <Moon className="h-8 w-8 md:h-10 md:w-10" fill="currentColor" />
       </div>
-      <div className="absolute bottom-20 left-1/4 text-[#ECD961] opacity-20 animate-float-slower">
+      <div className="absolute bottom-20 left-1/4 text-[#ECD961] opacity-20 animate-float-slower z-10">
         <Sparkles className="h-5 w-5 md:h-6 md:w-6" fill="currentColor" />
       </div>
 
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center relative z-10 max-w-7xl mx-auto">
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center relative z-20 max-w-7xl mx-auto">
         {/* Text Content */}
         <div className="space-y-8">
           <div className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-tight">
+            <h1
+              ref={titleRef}
+              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-tight"
+            >
               Trabaja tranquila: tu hijo está seguro, cuidado y feliz en pleno centro de Concepción
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-medium text-pretty leading-relaxed">
@@ -210,7 +299,7 @@ export function HeroSection() {
         </div>
 
         {/* Image */}
-        <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 shadow-2xl border-4 border-white">
+        <div className="relative max-h-[350px] lg:max-h-[600px] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 shadow-2xl border-4 border-white order-last lg:order-none">
           <img
             src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
             alt="Niños felices jugando en guardería AGUÚ Concepción"
