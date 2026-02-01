@@ -4,14 +4,19 @@ import { getAssetUrl } from "@/src/config"
 
 export function Footer() {
   return (
-    <footer id="contacto" className="border-t py-16 md:py-20" style={{ backgroundColor: "#79BBAF" }}>
+    <footer id="contacto" className="border-t py-16 md:py-20" style={{ backgroundColor: "#2D8A7F" }}>
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           {/* Contact Info */}
           <div className="space-y-8 text-white lg:col-span-2">
-            <div className="space-y-2">
-              <h3 className="text-3xl font-bold text-white">Aguú</h3>
-              <p className="text-white/80 text-lg">Guardería y After School</p>
+            <div className="space-y-4">
+              <img
+                src={getAssetUrl("logo-aguu-light.png")}
+                alt="Aguú Guardería y After School"
+                className="h-20 w-auto"
+                width="200"
+                height="80"
+              />
             </div>
 
             <div className="space-y-6">

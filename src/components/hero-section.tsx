@@ -171,7 +171,7 @@ export function HeroSection() {
                   value={formData.servicio}
                   onValueChange={(value) => setFormData({ ...formData, servicio: value })}
                 >
-                  <SelectTrigger className="rounded-2xl border-2 border-[#79BBAF]/30 focus:border-[#79BBAF] focus:ring-[#79BBAF] h-12 text-base">
+                  <SelectTrigger id="servicio" className="rounded-2xl border-2 border-[#79BBAF]/30 focus:border-[#79BBAF] focus:ring-[#79BBAF] h-12 text-base">
                     <SelectValue placeholder="Selecciona un servicio" />
                   </SelectTrigger>
                   <SelectContent>
