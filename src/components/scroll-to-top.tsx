@@ -30,18 +30,14 @@ export function ScrollToTop() {
   return (
     <>
       {isVisible && (
-        <button
+        <Button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 z-40 group"
+          size="lg"
+          className="fixed bottom-24 right-6 z-40 h-14 w-14 rounded-full shadow-2xl transition-all duration-300 bg-[#79BBAF] hover:bg-[#79BBAF]/90 text-white border-4 border-white p-0 hover:scale-110 hover:shadow-[0_0_30px_rgba(121,187,175,0.5)]"
           aria-label="Volver al inicio"
         >
-          <Button
-            size="lg"
-            className="h-14 w-14 rounded-full shadow-2xl transition-all duration-300 bg-[#79BBAF] hover:bg-[#79BBAF]/90 text-white border-4 border-white p-0 hover:scale-110 hover:shadow-[0_0_30px_rgba(121,187,175,0.5)]"
-          >
-            <ArrowUp className="h-6 w-6" />
-          </Button>
-        </button>
+          <ArrowUp className="h-6 w-6" />
+        </Button>
       )}
     </>
   )

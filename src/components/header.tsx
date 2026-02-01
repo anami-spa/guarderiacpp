@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { Button } from "@/src/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { getAssetUrl } from "@/src/config"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -26,9 +27,13 @@ export function Header() {
           className="flex items-center group cursor-pointer"
           aria-label="Volver al inicio"
         >
-          <span className="text-3xl font-bold tracking-tight text-[#79BBAF] group-hover:text-[#DE886C] transition-colors duration-300">
-            Aguú
-          </span>
+          <img
+            src={getAssetUrl("logo-aguu.png")}
+            alt="Aguú Guardería y After School"
+            className="h-12 md:h-16 w-auto transition-all duration-300 group-hover:scale-105"
+            width="200"
+            height="64"
+          />
         </button>
 
         {/* Desktop Menu */}
