@@ -301,11 +301,11 @@ export function HeroSection() {
         {/* Image */}
         <div className="relative max-h-[350px] lg:max-h-[600px] lg:aspect-square overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#79BBAF]/10 to-[#DE886C]/10 shadow-2xl border-4 border-white order-last lg:order-none">
           <img
-            src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
-            alt="Niños felices jugando en guardería AGUÚ Concepción"
-            width="1200"
-            height="900"
-            className="object-cover w-full h-full"
+            src={getAssetUrl('ninos-guarderia-aguu.webp')}
+            alt="Niños felices jugando en guardería AGUÚ Concepción - Ambiente moderno y acogedor"
+            width="800"
+            height="1200"
+            className="object-cover w-full h-full object-center"
           />
         </div>
       </div>
