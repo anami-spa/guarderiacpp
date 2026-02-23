@@ -23,10 +23,15 @@ export function HeroSection() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const titleRef = useRef<HTMLHeadingElement>(null)
   const [confettiPositions, setConfettiPositions] = useState<Array<{ top: string; left: string }>>([])
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Generar posiciones de confeti solo en el cliente para evitar SSR mismatch
+  // Detectar móvil y generar confeti solo en cliente
   useEffect(() => {
-    const positions = [...Array(15)].map(() => ({
+    const mobile = window.innerWidth < 768
+    setIsMobile(mobile)
+    // Menos confeti en móvil (0), completo en desktop (15)
+    const count = mobile ? 0 : 15
+    const positions = [...Array(count)].map(() => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
     }))
@@ -182,16 +187,20 @@ export function HeroSection() {
         })}
       </div>
 
-      {/* Elementos decorativos originales */}
-      <div className="absolute top-10 left-5 md:left-10 text-[#ECD961] opacity-20 animate-float z-10">
-        <Star className="h-6 w-6 md:h-8 md:w-8" fill="currentColor" />
-      </div>
-      <div className="absolute top-32 right-10 md:right-20 text-[#C18FC0] opacity-20 animate-float-slow z-10">
-        <Moon className="h-8 w-8 md:h-10 md:w-10" fill="currentColor" />
-      </div>
-      <div className="absolute bottom-20 left-1/4 text-[#ECD961] opacity-20 animate-float-slower z-10">
-        <Sparkles className="h-5 w-5 md:h-6 md:w-6" fill="currentColor" />
-      </div>
+      {/* Elementos decorativos - solo en desktop */}
+      {!isMobile && (
+        <>
+          <div className="absolute top-10 left-10 text-[#ECD961] opacity-20 animate-float z-10">
+            <Star className="h-8 w-8" fill="currentColor" />
+          </div>
+          <div className="absolute top-32 right-20 text-[#C18FC0] opacity-20 animate-float-slow z-10">
+            <Moon className="h-10 w-10" fill="currentColor" />
+          </div>
+          <div className="absolute bottom-20 left-1/4 text-[#ECD961] opacity-20 animate-float-slower z-10">
+            <Sparkles className="h-6 w-6" fill="currentColor" />
+          </div>
+        </>
+      )}
 
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center relative z-20 max-w-7xl mx-auto">
         {/* Text Content */}

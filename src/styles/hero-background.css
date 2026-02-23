@@ -154,14 +154,25 @@
   }
 }
 
-/* Responsive: blobs más pequeños en móvil */
+/* Responsive: simplificar en móvil para mejor performance */
 @media (max-width: 768px) {
+  /* Reducir a 2 blobs, sin animación, sin blur pesado */
   .blob-teal,
-  .blob-coral,
+  .blob-coral {
+    width: 200px;
+    height: 200px;
+    filter: blur(30px);
+    animation: none;
+  }
+
+  /* Ocultar blobs secundarios */
   .blob-yellow,
   .blob-purple {
-    width: 250px;
-    height: 250px;
-    filter: blur(40px);
+    display: none;
+  }
+
+  /* Desactivar confeti en móvil */
+  .confetti-dot {
+    display: none;
   }
 }
