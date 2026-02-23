@@ -100,6 +100,7 @@ export function HeroSection() {
       form.append("edadNino", formData.edadNino)
       form.append("servicio", formData.servicio || "No especificado")
       form.append("_subject", "Nueva solicitud de visita - AGUÚ Guardería")
+      form.append("_cc", "aguu.concepcion@gmail.com")
 
       // Enviar a Formspree usando FormData
       const response = await fetch("https://formspree.io/f/maqojvpw", {

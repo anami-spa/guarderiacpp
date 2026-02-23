@@ -63,7 +63,7 @@ export function BenefitsSection() {
           <div className="order-first md:order-last">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 shadow-lg">
               <img
-                src={getAssetUrl('happy-children-playing-in-modern-daycare-center.jpg')}
+                src={getAssetUrl('happy-children-playing-in-modern-daycare-center.webp')}
                 alt="Educadora de AGUÚ interactuando con niños en actividad de cuidado personalizado"
                 width="1200"
                 height="900"

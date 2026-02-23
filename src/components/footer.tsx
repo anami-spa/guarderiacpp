@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-8 text-white lg:col-span-2">
             <div className="space-y-4">
               <img
-                src={getAssetUrl("logo-aguu-light.png")}
+                src={getAssetUrl("logo-aguu-light.webp")}
                 alt="Aguú Guardería y After School"
                 className="h-20 w-auto"
                 width="200"
@@ -80,7 +80,7 @@ export function Footer() {
           <div className="lg:col-span-3">
             <div className="relative aspect-video overflow-hidden rounded-3xl bg-white border-4 border-white/30 shadow-2xl">
               <img
-                src={getAssetUrl('google-maps-location-pin-concepcion-chile.jpg')}
+                src={getAssetUrl('google-maps-location-pin-concepcion-chile.webp')}
                 alt="Mapa de ubicación AGUU en Concepción"
                 width="1200"
                 height="675"

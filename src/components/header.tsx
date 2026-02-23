@@ -28,7 +28,7 @@ export function Header() {
           aria-label="Volver al inicio"
         >
           <img
-            src={getAssetUrl("logo-aguu.png")}
+            src={getAssetUrl("logo-aguu.webp")}
             alt="Aguú Guardería y After School"
             className="h-12 md:h-16 w-auto transition-all duration-300 group-hover:scale-105"
             width="200"

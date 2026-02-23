@@ -1,8 +1,8 @@
+@import './hero-background.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './hero-background.css';
 
 :root {
   /* Updated color palette to match playful daycare aesthetic */
